@@ -18,26 +18,16 @@ body {
   font-family: "PT Sans", sans-serif;
   font-size: 18px;
   line-height: 21px;
-  font-weight: 400;
-  font-style: normal;
   background-color: #f2f2f2;
-  color: #000;
+  color: #333;
 }
 
 .page-header {
-  background-color: #f7f5f5;
+  background-color: #fff;
 }
 
-.main-index {
-  background-color: #f7f5f5;
-}
-
-.main-inner {
-  background-color: #f7f5f5;
-}
-
-.page-footer {
-  background-color: #f7f5f5;
+.navigation-list {
+  list-style: none;
 }
 
 .navigation-link {
@@ -45,7 +35,7 @@ body {
   font-size: 20px;
   line-height: 24px;
   text-transform: capitalize;
-  color: inherit;
+  color: #000;
   text-decoration: none;
 }
 
@@ -53,32 +43,31 @@ body {
   border-bottom: 2px solid #756257;
 }
 
-.navigation-list {
-  list-style: none;
+.button {
+  font-family: inherit;
+  font-weight: 700;
+  border-radius: 4px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+  background-color: #756157;
+
 }
 
 .navigation-item .button {
-  background: #756157;
-  color: #fff;
-  border-radius: 4px;
+  font-size: 16px;
+  line-height: 20px;
   width: 160px;
   height: 36px;
-  font-weight: 700;
-  text-transform: uppercase;
-  text-align: center;
-  text-decoration: none;
 }
 
 .preview {
-  /*
-  color: #fff;
-  background-color: #000;
-  */
   background-image: url("../images/preview-pattern.svg"), url("../images/background-preview.jpg");
+  background-color: #c2d5e3;
   background-size: 100% auto, cover;
   background-position: left bottom, left top;
   background-repeat: no-repeat;
-
+  text-align: center;
 }
 
 .preview-title {
@@ -86,19 +75,17 @@ body {
   font-size: 30px;
   line-height: 36px;
   text-transform: uppercase;
-  text-align: center;
   color: #000;
 }
 
 .preview-text {
   font-size: 22px;
   line-height: 26px;
-  text-align: center;
-  color: #333;
 }
 
 .advantages-list {
   list-style: none;
+  text-align: center;
 }
 
 .advantages-title {
@@ -106,31 +93,26 @@ body {
   font-size: 24px;
   line-height: 28px;
   text-transform: uppercase;
-  text-align: center;
   color: #000;
 }
 
-.advantages-description {
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 21px;
-  text-align: center;
-  color: #333;
-
-}
-
 .light {
-  background: rgba(131, 179, 211, 0.12);
+  background-color: rgba(131, 179, 211, 0.12);
 
 }
 
 .medium {
-  background: rgba(131, 179, 211, 0.2);
+  background-color: rgba(131, 179, 211, 0.2);
 }
 
 .dark {
-  background: #82b3d3;
+  background-color: #82b3d3;
   color: #fff;
+}
+
+.services {
+  background-color: #fff;
+  text-align: center;
 }
 
 .services-title {
@@ -138,16 +120,12 @@ body {
   font-size: 30px;
   line-height: 36px;
   text-transform: uppercase;
-  text-align: center;
   color: #000;
 }
 
 .services-text {
-  font-weight: 400;
   font-size: 22px;
   line-height: 26px;
-  text-align: center;
-  color: #333;
 }
 
 .services-list {
@@ -159,16 +137,12 @@ body {
   font-size: 24px;
   line-height: 28px;
   text-transform: uppercase;
-  text-align: center;
   color: #000;
 }
 
-.services-description {
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 21px;
+.hotel-search {
   text-align: center;
-  color: #333;
+  background-color: #fff;
 }
 
 .hotel-search-title {
@@ -176,27 +150,29 @@ body {
   font-size: 30px;
   line-height: 36px;
   text-transform: uppercase;
-  text-align: center;
   color: #000;
 }
 
 .hotel-search-text {
-  font-weight: 400;
   font-size: 22px;
   line-height: 26px;
-  text-align: center;
-  color: #333;
 }
 
 .button-search {
-  font-weight: 700;
   font-size: 20px;
   line-height: 36px;
-  text-transform: uppercase;
-  text-align: center;
+  width: 376px;
+  height: 52px;
+}
+
+.newsletter {
+  background-image: url("../images/newsletter-background.jpg");
+  background-color: #83aabb;
   color: #fff;
-  background: #756157;
-  border-radius: 4px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  text-align: center;
 }
 
 .newsletter-title {
@@ -204,54 +180,43 @@ body {
   font-size: 30px;
   line-height: 36px;
   text-transform: uppercase;
-  color: #fff;
 }
 
 .newsletter-text {
-  font-weight: 400;
   font-size: 22px;
   line-height: 26px;
-  text-align: center;
-  color: #fff;
 }
 
-.newsletter {
-  background-image: url("../images/newsletter-background.jpg");
-  background-size: 100% auto;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-}
 
 input::placeholder {
-  font-weight: 400;
+  font-family: "PT Sans", sans-serif;
   font-size: 18px;
   line-height: 24px;
   color: rgba (0, 0, 0, 0.6);
 }
 
 .newsletter-button {
-  font-weight: 700;
   font-size: 20px;
   line-height: 36px;
-  text-transform: uppercase;
-  text-align: center;
-  color: #fff;
   background: #82b3d3;
   border-radius: 0 4px 4px 0;
+  width: 232px;
+  height: 52px;
 }
 
-.footer-social-list {
-  list-style: none;
-}
-
-.visually-hidden {
-  font-style: normal;
+.page-footer {
+  background-color: #fff;
 }
 
 .footer-phone {
   color: #000;
   text-decoration: none;
   font-style: normal;
+  font-size: 40px;
+  line-height: 40px;
+  text-transform: uppercase;
+  text-align: center;
+  display: block;
 }
 
 .htmlacademy-link {
