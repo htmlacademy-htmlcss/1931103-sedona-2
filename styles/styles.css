@@ -14,7 +14,15 @@
   font-display: swap;
 }
 
+html {
+  height: 100%;
+}
+
 body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
   font-family: "PT Sans", sans-serif;
   font-size: 18px;
   line-height: 21px;
@@ -22,12 +30,33 @@ body {
   color: #333;
 }
 
+.wrapper {
+  margin: 0 auto;
+  width: 1200px;
+}
+
 .page-header {
   background-color: #fff;
 }
 
+.navigation {
+  display: flex;
+  flex-wrap: wrap;
+  width: 1060px;
+  margin: 0 auto;
+
+}
+
 .navigation-list {
   list-style: none;
+  width: 775;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation-user {
+  max-width: 300px;
+  margin-left: auto;
 }
 
 .navigation-link {
@@ -58,6 +87,10 @@ body {
 .navigation-item .button {
   font-size: 16px;
   line-height: 20px;
+}
+
+.main-container {
+  flex-grow: 1;
 }
 
 .preview {
@@ -129,6 +162,15 @@ body {
 
 .services-list {
   list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.services-item {
+  max-width: 400px;
+  min-height: 385px;
 }
 
 .services-name {
@@ -204,6 +246,12 @@ body {
 
 .page-footer {
   background-color: #fff;
+  display: flex;
+}
+
+.footer-contacts {
+  min-width: 142px;
+  margin-right: 41.5px;
 }
 
 .footer-phone {
@@ -215,6 +263,7 @@ body {
   text-transform: uppercase;
   text-align: center;
   display: block;
+
 }
 
 .htmlacademy-link {
@@ -229,6 +278,7 @@ body {
   color: #fff;
   background-size: cover;
   background-repeat: no-repeat;
+
 }
 
 .inner-header-title {
@@ -243,6 +293,11 @@ body {
 
 .breadcrumbs-item .current-page {
   font-size: 16px;
+}
+
+.catalog-filter {
+  display: flex;
+  justify-content: space-between;
 }
 
 .catalog-filter-group {
@@ -286,9 +341,15 @@ body {
   border-radius: 4px;
 }
 
+.flex-buttons {
+  display: flex;
+  flex-direction: column;
+}
+
 .primary-button {
   background-color: #82b3d3;
   border: none;
+  margin-bottom: 40px;
 }
 
 .secondary-button {
@@ -368,6 +429,18 @@ body {
 
 .pagination {
   list-style: none;
+  display: flex;
+  max-width: 400px;
+}
+
+.pagination-item {
+  min-width: 60px;
+  min-height: 60px;
+  margin-right: 8px;
+}
+
+.pagination-item:last-child {
+  margin-right: 0;
 }
 
 .pagination-link {
