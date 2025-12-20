@@ -64,7 +64,7 @@
             <h2 class="visually-hidden">Список гостиниц с фильтрами</h2>
             <form class="catalog-filter" action="https://echo.htmlacademy.ru/" method="post">
               <fieldset class="catalog-filter-group">
-                <legend class="catalog-filter-title">Инфраструктура</legend>
+                <legend class="catalog-filter-title">Инфраструктура:</legend>
                 <ul class="catalog-filter-list">
                   <li class="catalog-filter-item">
                     <input class="control-input" type="checkbox" name="pool" id="pool" checked>
@@ -81,7 +81,7 @@
                 </ul>
               </fieldset>
               <fieldset class="catalog-filter-group">
-                <legend class="catalog-filter-title">Тип Жилья</legend>
+                <legend class="catalog-filter-title">Тип Жилья:</legend>
                 <ul class="catalog-filter-list">
                   <li class="catalog-filter-item">
                     <input class="control-input" type="radio" name="hotel-type" id="hotel" checked>
@@ -113,29 +113,31 @@
         </div>
 
         <section class="catalog-hotels">
-          <h2 class="hotel-quantity">Найдено гостиниц: <span class="found-hotels">38</span></h2>
-          <select class="select-control" aria-label="Сортировка">
-            <option value="popular">Сначала популярные</option>
-            <option value="cheap" selected>Сначала дешевые</option>
-            <option value="expensive">Сначала дорогие</option>
-          </select>
-          <ul class="hotels-display">
-            <li class="display-item">
-              <a class="display-item-link selected" href="catalog.html?view=tile">
-                <span class="visually-hidden">Показать карточки</span>
-              </a>
-            </li>
-            <li class="display-item">
-              <a class="display-item-link" href="catalog.html?view=card">
-                <span class="visually-hidden">Показать крупные значки</span>
-              </a>
-            </li>
-            <li class="display-item">
-              <a class="display-item-link" href="catalog.html?view=list">
-                <span class="visually-hidden">Показать список</span>
-              </a>
-            </li>
-          </ul>
+          <div class="flex-container">
+            <h2 class="hotel-quantity">Найдено гостиниц: <span class="found-hotels">38</span></h2>
+            <select class="select-control" aria-label="Сортировка">
+              <option value="popular">Сначала популярные</option>
+              <option value="cheap" selected>Сначала дешевые</option>
+              <option value="expensive">Сначала дорогие</option>
+            </select>
+            <ul class="hotels-display">
+              <li class="display-item">
+                <a class="display-item-link selected" href="catalog.html?view=tile">
+                  <span class="visually-hidden">Показать карточки</span>
+                </a>
+              </li>
+              <li class="display-item">
+                <a class="display-item-link" href="catalog.html?view=card">
+                  <span class="visually-hidden">Показать крупные значки</span>
+                </a>
+              </li>
+              <li class="display-item">
+                <a class="display-item-link" href="catalog.html?view=list">
+                  <span class="visually-hidden">Показать список</span>
+                </a>
+              </li>
+            </ul>
+          </div>
 
           <ul class="hotels-list">
             <li class="hotels-card">

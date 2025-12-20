@@ -16,14 +16,14 @@
 
 html {
   min-height: 100%;
+}
+
+* {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  padding: 0 40px;
-  width: 100%;
-  max-width: 1200px;
   min-height: 100%;
   font-family: "PT Sans", sans-serif;
   font-size: 18px;
@@ -32,10 +32,11 @@ body {
   color: #333;
 }
 
+
 .wrapper {
   margin: 0 auto;
   min-height: 100vh;
-  width: 100%;
+  max-width: 1200px;
   display: flex;
   flex-direction: column;
   background-color: #fff;
@@ -45,19 +46,30 @@ body {
 .navigation {
   padding: 0 70px;
   display: flex;
+}
+
+.navigation-logo {
+  margin-right: 30px;
+}
+
+/* Контейнер для выравнивания списков навигации в header*/
+.navigation-lists {
+  display: flex;
   justify-content: space-between;
 }
 
 .navigation-list {
+  margin: 0;
+  padding: 0;
   list-style: none;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  margin: 0;
-  padding: 0;
 }
 
+
 .navigation-link {
+  display: block;
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
@@ -76,6 +88,8 @@ body {
 
 .navigation-user .navigation-link {
   padding: 22px 12px;
+  min-width: 20px;
+  min-height: 20px;
 }
 
 .button {
@@ -110,35 +124,34 @@ body {
   background-size: 100% auto, cover;
   background-position: left bottom, left top;
   background-repeat: no-repeat;
-  max-height: 485px;
-}
-
-.preview-picture {
   padding: 52px 38px 82px;
 }
 
 .preview-title {
+  margin: 0;
+  margin-bottom: 26px;
   font-weight: 700;
   font-size: 30px;
   line-height: 36px;
   text-transform: uppercase;
   color: #000;
-  padding-top: 70px;
 }
 
 .preview-text {
   font-size: 22px;
   line-height: 26px;
-  padding-bottom: 70px;
 }
 
-.preview-title,
-.preview-text {
-  padding-left: 70px;
-  padding-right: 70px;
+/* Отступы слева и справа у заголовка и параграфа разные: у заголовка - 290, у параграфа 275.
+Если задавать 290 в коде ниже, то у слов в заголовке и параграфе произойдет перенос в ненужном месте,
+поэтому сделала отступ по параграфу и чуть меньше, чтоб переносов не было*/
+.preview-title-text {
+  padding: 70px 274px;
 }
 
 .advantages-list {
+  margin: 0;
+  padding: 0;
   list-style: none;
   text-align: center;
   display: flex;
@@ -151,11 +164,18 @@ body {
 }
 
 .advantages-title {
+  margin: 0;
+  padding: 0;
   font-weight: 700;
   font-size: 24px;
   line-height: 28px;
   text-transform: uppercase;
   color: #000;
+}
+
+.advantages-description {
+  margin: 0;
+  padding: 0;
 }
 
 .advantanges-picture {
@@ -184,52 +204,49 @@ body {
   font-weight: 700;
   font-size: 30px;
   line-height: 36px;
+  margin: 0;
+  margin-bottom: 20px;
   text-transform: uppercase;
   color: #000;
-  padding-top: 64px;
 }
 
 .services-text {
+  margin: 0;
   font-size: 22px;
   line-height: 26px;
-  padding-bottom: 64px;
+}
+
+.services-title-text {
+  padding: 64px 348px;
 }
 
 .services-list {
-  list-style: none;
   margin: 0;
   padding: 0;
+  list-style: none;
   display: flex;
   flex-wrap: wrap;
-}
-
-.services-title,
-.services-text {
-  padding-left: 70px;
-  padding-right: 70px;
 }
 
 .services-item {
   flex-basis: 400px;
   min-height: 385px;
+  padding: 82px 86px;
 }
 
 .services-name {
   font-weight: 700;
   font-size: 24px;
   line-height: 28px;
+  margin: 0;
+  margin-bottom: 30px;
   text-transform: uppercase;
   color: #000;
 }
 
-.services-name,
-.services-description {
-  padding: 85px;
-}
-
 .hotel-search {
   text-align: center;
-  padding-bottom: 96px;
+  padding: 96px 304px;
 }
 
 .hotel-search-title {
@@ -238,13 +255,14 @@ body {
   line-height: 36px;
   text-transform: uppercase;
   color: #000;
-  padding-top: 96px;
+  margin: 0;
   margin-bottom: 20px;
 }
 
 .hotel-search-text {
   font-size: 22px;
   line-height: 26px;
+  margin: 0;
   margin-bottom: 54px;
 }
 
@@ -264,6 +282,8 @@ body {
 }
 
 .newsletter-title {
+  margin: 0;
+  margin-bottom: 20px;
   font-weight: 700;
   font-size: 30px;
   line-height: 36px;
@@ -271,6 +291,8 @@ body {
 }
 
 .newsletter-text {
+  margin: 0;
+  margin-bottom: 54px;
   font-size: 22px;
   line-height: 26px;
 }
@@ -294,16 +316,20 @@ body {
   border-radius: 0 4px 4px 0;
 }
 
-.footer-contacts {
-  min-width: 142px;
-  margin-right: 42px;
+.page-footer {
+  padding: 40px 70px 30px;
 }
 
 .footer-contacts-adress {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
+}
+
+.footer-social-list {
+  margin: 0;
+  padding: 0;
 }
 
 .footer-phone {
@@ -330,18 +356,19 @@ body {
   color: #fff;
   background-size: cover;
   background-repeat: no-repeat;
-  max-height: 412px;
+  padding: 35px 70px 70px;
 }
 
 .inner-header-title {
+  margin: 0;
   font-weight: 700;
   font-size: 60px;
   line-height: 78px;
-  padding: 36px 566px 8px 70px;
-
 }
 
 .breadcrumbs {
+  margin: 0;
+  padding: 0;
   list-style: none;
   display: flex;
   flex-wrap: wrap;
@@ -349,7 +376,10 @@ body {
 
 .breadcrumbs-item .current-page {
   font-size: 16px;
-  margin-left: 4px;
+}
+
+.breadcrumbs-link {
+  margin-right: 4px;
 }
 
 .catalog-filter {
@@ -361,12 +391,6 @@ body {
   border: none;
 }
 
-.catalog-filter-group,
-.flex-buttons {
-  min-height: 412px;
-  min-height: 160px;
-}
-
 .catalog-filter-title {
   font-weight: 700;
   font-size: 20px;
@@ -376,11 +400,9 @@ body {
 }
 
 .catalog-filter-list {
+  margin: 0;
+  padding: 0;
   list-style: none;
-}
-
-.catalog-filter-item {
-  margin-bottom: 16px;
 }
 
 .price {
@@ -429,10 +451,18 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
   padding: 50px 70px 60px;
 }
 
+/* Контейнер для выравнивания заголовка, селекта и списка с отображением карточек*/
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+
 .hotel-quantity {
+  margin: auto;
   font-weight: 700;
   font-size: 30px;
   line-height: 36px;
@@ -444,6 +474,7 @@ body {
   background-color: transparent;
   border: 2px solid #e5e5e5;
   border-radius: 4px;
+  margin-right: 70px;
 }
 
 .select-control option {
@@ -454,12 +485,13 @@ body {
 }
 
 .hotels-display {
+  margin: 0;
+  padding: 0;
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-
-
 }
 
 .display-item {
@@ -471,6 +503,8 @@ body {
 }
 
 .hotels-list {
+  margin: 0;
+  margin-top: 40px;
   list-style: none;
   display: flex;
   flex-wrap: wrap;
@@ -487,8 +521,6 @@ body {
 .hotels-card:nth-child(3n) {
   margin-right: 0;
 }
-
-
 
 .hotels-card-link {
   text-decoration: none;
@@ -532,18 +564,17 @@ body {
 }
 
 .pagination {
+  margin: 0;
+  padding: 0;
   list-style: none;
   display: flex;
-  padding: 0;
+  flex-wrap: wrap;
 }
 
-.pagination-item {
+.pagination-item:not(:last-child) {
   margin-right: 8px;
 }
 
-.pagination-item:last-child {
-  margin-right: 0;
-}
 
 .pagination-link {
   display: block;
