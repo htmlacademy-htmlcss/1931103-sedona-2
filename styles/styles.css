@@ -14,7 +14,17 @@
   font-display: swap;
 }
 
+html {
+  min-height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
+  margin: 0;
+  min-height: 100%;
   font-family: "PT Sans", sans-serif;
   font-size: 18px;
   line-height: 21px;
@@ -22,15 +32,43 @@ body {
   color: #333;
 }
 
-.page-header {
+.wrapper {
+  margin: 0 auto;
+  min-height: 100vh;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
   background-color: #fff;
 }
 
-.navigation-list {
-  list-style: none;
+
+.navigation {
+  padding: 0 70px;
+  display: flex;
 }
 
+.navigation-logo {
+  margin-right: 30px;
+}
+
+.navigation-lists {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.navigation-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+
 .navigation-link {
+  display: block;
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
@@ -41,6 +79,16 @@ body {
 
 .navigation-link-current {
   border-bottom: 2px solid #756257;
+}
+
+.navigation-list:first-of-type .navigation-link {
+  padding: 20px 16px;
+}
+
+.navigation-user .navigation-link {
+  padding: 22px 12px;
+  min-width: 20px;
+  min-height: 20px;
 }
 
 .button {
@@ -58,18 +106,29 @@ body {
 .navigation-item .button {
   font-size: 16px;
   line-height: 20px;
+  padding: 8px 50px;
+}
+
+.main-container {
+  flex-grow: 1;
 }
 
 .preview {
+  text-align: center;
+}
+
+.preview-background {
   background-image: url("../images/preview-pattern.svg"), url("../images/background-preview.jpg");
   background-color: #c2d5e3;
   background-size: 100% auto, cover;
   background-position: left bottom, left top;
   background-repeat: no-repeat;
-  text-align: center;
+  padding: 52px 38px 82px;
 }
 
 .preview-title {
+  margin: 0;
+  margin-bottom: 26px;
   font-weight: 700;
   font-size: 30px;
   line-height: 36px;
@@ -78,21 +137,49 @@ body {
 }
 
 .preview-text {
+  margin: 0;
   font-size: 22px;
   line-height: 26px;
 }
 
+/* Отступы слева и справа у заголовка и параграфа разные: у заголовка - 290, у параграфа 275.
+Если задавать 290 в коде ниже, то у слов в заголовке и параграфе произойдет перенос в ненужном месте,
+поэтому сделала отступ по параграфу и чуть меньше, чтоб переносов не было*/
+.preview-title-text {
+  padding: 70px 274px;
+}
+
 .advantages-list {
+  margin: 0;
+  padding: 0;
   list-style: none;
   text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.advantages-item {
+  flex-basis: 400px;
+  min-height: 385px;
 }
 
 .advantages-title {
+  margin: 0;
+  padding: 0;
   font-weight: 700;
   font-size: 24px;
   line-height: 28px;
   text-transform: uppercase;
   color: #000;
+}
+
+.advantages-description {
+  margin: 0;
+  padding: 0;
+}
+
+.advantanges-picture {
+  flex-grow: 1;
 }
 
 .light {
@@ -110,7 +197,6 @@ body {
 }
 
 .services {
-  background-color: #fff;
   text-align: center;
 }
 
@@ -118,30 +204,49 @@ body {
   font-weight: 700;
   font-size: 30px;
   line-height: 36px;
+  margin: 0;
+  margin-bottom: 20px;
   text-transform: uppercase;
   color: #000;
 }
 
 .services-text {
+  margin: 0;
   font-size: 22px;
   line-height: 26px;
 }
 
+.services-title-text {
+  padding: 64px 348px;
+}
+
 .services-list {
+  margin: 0;
+  padding: 0;
   list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.services-item {
+  flex-basis: 400px;
+  min-height: 385px;
+  padding: 82px 86px;
 }
 
 .services-name {
   font-weight: 700;
   font-size: 24px;
   line-height: 28px;
+  margin: 0;
+  margin-bottom: 30px;
   text-transform: uppercase;
   color: #000;
 }
 
 .hotel-search {
   text-align: center;
-  background-color: #fff;
+  padding: 96px 304px;
 }
 
 .hotel-search-title {
@@ -150,16 +255,21 @@ body {
   line-height: 36px;
   text-transform: uppercase;
   color: #000;
+  margin: 0;
+  margin-bottom: 20px;
 }
 
 .hotel-search-text {
   font-size: 22px;
   line-height: 26px;
+  margin: 0;
+  margin-bottom: 54px;
 }
 
 .button-search {
   font-size: 20px;
   line-height: 36px;
+  padding: 8px 50px;
 }
 
 .newsletter {
@@ -169,9 +279,12 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
+  padding: 96px 70px 104px;
 }
 
 .newsletter-title {
+  margin: 0;
+  margin-bottom: 20px;
   font-weight: 700;
   font-size: 30px;
   line-height: 36px;
@@ -179,6 +292,8 @@ body {
 }
 
 .newsletter-text {
+  margin: 0;
+  margin-bottom: 54px;
   font-size: 22px;
   line-height: 26px;
 }
@@ -186,6 +301,7 @@ body {
 .newsletter-field {
   border-radius: 4px 0 0 4px;
   border: none;
+  padding: 14px 345px 14px 20px;
 }
 
 .newsletter-field::placeholder {
@@ -200,10 +316,23 @@ body {
   line-height: 36px;
   background: #82b3d3;
   border-radius: 0 4px 4px 0;
+  padding: 8px 50px;
 }
 
 .page-footer {
-  background-color: #fff;
+  padding: 40px 70px 30px;
+}
+
+.footer-contacts-adress {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-social-list {
+  margin: 0;
+  padding: 0;
 }
 
 .footer-phone {
@@ -215,6 +344,7 @@ body {
   text-transform: uppercase;
   text-align: center;
   display: block;
+
 }
 
 .htmlacademy-link {
@@ -229,20 +359,35 @@ body {
   color: #fff;
   background-size: cover;
   background-repeat: no-repeat;
+  padding: 35px 70px 70px;
 }
 
 .inner-header-title {
+  margin: 0;
   font-weight: 700;
   font-size: 60px;
   line-height: 78px;
 }
 
 .breadcrumbs {
+  margin: 0;
+  padding: 0;
   list-style: none;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .breadcrumbs-item .current-page {
   font-size: 16px;
+}
+
+.breadcrumbs-link {
+  margin-right: 4px;
+}
+
+.catalog-filter {
+  display: flex;
+  justify-content: space-between;
 }
 
 .catalog-filter-group {
@@ -254,9 +399,12 @@ body {
   font-size: 20px;
   line-height: 24px;
   text-transform: capitalize;
+  text-align: center;
 }
 
 .catalog-filter-list {
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
 
@@ -266,6 +414,9 @@ body {
   font-size: inherit;
   line-height: 24px;
   color: #000;
+  padding: 12px 82px 12px 20px;
+
+
 }
 
 .from,
@@ -286,21 +437,36 @@ body {
   border-radius: 4px;
 }
 
+.flex-buttons {
+  display: flex;
+  flex-direction: column;
+}
+
 .primary-button {
   background-color: #82b3d3;
   border: none;
+  margin-bottom: 40px;
+  display: flex;
+  padding: 8px 50px;
 }
 
 .secondary-button {
   background-color: transparent;
   border: none;
+  display: flex;
+  padding: 8px 58px;
 }
 
 .catalog-hotels {
-  background-color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 70px 60px;
 }
-
 .hotel-quantity {
+  margin: 0;
+  margin-right: auto;
   font-weight: 700;
   font-size: 30px;
   line-height: 36px;
@@ -321,8 +487,48 @@ body {
   color: inherit;
 }
 
-.hotels-list {
+.hotels-display {
+  margin: 0;
+  padding: 0;
   list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.display-item {
+  margin-right: 8px;
+}
+
+.display-item:last-child {
+  margin-right: 0;
+}
+.select-cards-view {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.hotels-list {
+  margin: 0;
+  margin-top: 40px;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.hotels-card {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+  margin-bottom: 20px;
+
+}
+
+.hotels-card:nth-child(3n) {
+  margin-right: 0;
 }
 
 .hotels-card-link {
@@ -367,13 +573,26 @@ body {
 }
 
 .pagination {
+  margin: 0;
+  padding: 0;
   list-style: none;
+  display: flex;
+  flex-wrap: wrap;
 }
 
+.pagination-item:not(:last-child) {
+  margin-right: 8px;
+}
+
+
 .pagination-link {
+  display: block;
   font-size: 20px;
   line-height: 36px;
   background-color: #82b3d3;
+  min-width: 60px;
+  min-height: 60px;
+
 }
 
 .pagination-current {
@@ -382,11 +601,14 @@ body {
 }
 
 .forward {
+  display: block;
   font-size: 22px;
   line-height: 26px;
   text-align: center;
   color: #000;
   border-radius: 4px;
+  min-width: 60px;
+  min-height: 60px;
 }
 
 .newsletter-no-background {
