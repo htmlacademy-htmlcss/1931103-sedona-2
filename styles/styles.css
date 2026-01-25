@@ -180,7 +180,7 @@ img {
 
 .advantages-item {
   min-width: 400px;
-  min-height: 385px;
+  min-height: 386px;
 }
 
 .advantages-item.dark {
@@ -188,7 +188,6 @@ img {
   color: #fff;
   display: flex;
   grid-column: span 3;
-  justify-content: space-between;
 }
 
 .advantages-item.medium {
@@ -205,6 +204,8 @@ img {
 
 .advantages-title-description-dark {
   padding: 102px 86px;
+  min-width: 400px;
+  min-height: 100%;
 }
 
 .advantages-title {
@@ -222,7 +223,7 @@ img {
 }
 
 .advantages-picture {
-  height: 100%;
+  min-height: 100%;
 }
 
 .services {
@@ -337,6 +338,8 @@ img {
 }
 
 .newsletter-field {
+  font-family: inherit;
+  font-size: inherit;
   border-radius: 4px 0 0 4px;
   border: none;
   min-width: 452px;
@@ -345,7 +348,7 @@ img {
 
 .newsletter-field::placeholder {
   font-family: inherit;
-  font-size: 18px;
+  font-size: inherit;
   line-height: 24px;
   color: rgba (0, 0, 0, 0.6);
 }
@@ -466,16 +469,18 @@ img {
   margin-right: 70px;
 }
 
-.catalog-filter-group:nth-child(2) {
-  margin-right: 32px;
+.catalog-filter-group:nth-child(3) {
+  margin-left: 140px;
+  margin-right: 70px;
 }
+
 
 .catalog-filter-title {
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
   text-transform: capitalize;
-  margin-bottom: 32px;
+  margin: 0 0 32px 0;
 }
 
 .catalog-filter-list {
@@ -622,6 +627,7 @@ img {
 .hotels-card {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: min-content 1fr;
   gap: 16px 20px;
   border: 1px solid #e6e6e6;
   border-radius: 4px;
@@ -644,6 +650,8 @@ img {
 
 .hotels-card-image {
   margin-bottom: 16px;
+  object-fit: cover;
+  width: 100%;
 }
 
 .hotel-price {
@@ -660,18 +668,11 @@ img {
 .button.rating {
   min-width: 140px;
   padding: 8px 5px;
-}
-
-.button.details,
-.button.favorites {
   font-size: 16px;
   line-height: 20px;
 }
 
 .button.add-to-favorites {
-  font-family: inherit;
-  font-size: 16px;
-  line-height: 20px;
   background-color: #82b3d3;
 }
 
@@ -686,9 +687,7 @@ img {
 }
 
 .button.rating {
-  font-size: 16px;
   font-weight: 400;
-  line-height: 20px;
   background-color: #f2f2f2;
   color: #333;
 }
