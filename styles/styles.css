@@ -18,7 +18,7 @@ html {
   min-height: 100%;
 }
 
-* {
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
@@ -105,6 +105,7 @@ svg {
   color: #000;
   text-decoration: none;
   outline: none;
+  border: 2px solid transparent;
 }
 
 .navigation-link:not(.navigation-link.button) {
@@ -133,10 +134,10 @@ svg {
 }
 
 .navigation-link:not(.navigation-link.button):focus-visible {
-  color: #83b3d3;
+  border-color: #83b3d3;
 }
 
-.navigation-link:not(.navigation-link.button):active {
+.navigation-link:not(.navigation-link.button):active, a:active span {
   color: rgba(0, 0, 0, 0.3);
 }
 
@@ -159,8 +160,8 @@ svg {
   top: 10px;
   right: 8px;
   border-radius: 50%;
-  width: 20px;
-  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
   background-color: #7db54f;
   font-size: 10px;
   font-weight: 400;
@@ -181,11 +182,6 @@ svg {
   border: none;
   cursor: pointer;
   outline: none;
-}
-
-.button-disabled {
-  background-color: #e5e5e5;
-  pointer-events: none;
 }
 
 .button-primary {
@@ -233,7 +229,11 @@ svg {
 }
 
 .button-quaternary:focus-visible {
-  border: 3px solid #83b3d3;
+  outline: 3px solid #83b3d3;
+}
+
+.button-disabled {
+ background-color: #e5e5e5;
 }
 
 
@@ -598,13 +598,30 @@ svg {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-
 }
 
-.breadcrumbs-link .visually-hidden {
+.breadcrumbs-link {
+  position: relative;
+  min-width: 14px;
+  min-height: 16px;
   display: block;
-  width: 14px;
-  height: 16px;
+  padding: 4px 0;
+  margin-right: 10px;
+}
+
+.breadcrumbs-link::after {
+  content:"";
+  display: block;
+  position: absolute;
+  background-image: url("../images/breadcrumbs-arrow.svg");
+  background-repeat: no-repeat;
+  min-width: 8px;
+  min-height: 10px;
+  top: 8px;
+  left: 10px;
+  margin-left: 10px;
+  pointer-events: none;
+
 }
 
 .breadcrumbs-link svg:hover {
@@ -615,17 +632,10 @@ svg {
   fill: rgba(255, 255, 255, 0.3);
 }
 
-.breadcrumbs-item:nth-child(2) {
-  background-image: url("../images/breadcrumbs-arrow.svg");
-  background-repeat: no-repeat;
-  background-position: left center;
-  min-width: 8px;
-  min-height: 10px;
-  margin: 0 10px;
-}
-
 .breadcrumbs-item .current-page {
   font-size: 16px;
+  display: block;
+  margin-left: 10px;
 }
 
 .catalog-filter {
@@ -667,10 +677,66 @@ svg {
   margin-bottom: 16px;
 }
 
-.control-checkbox,
-.control-radio {
-  margin-left: 2px;
+.control {
+  position: relative;
+  display: block;
+  padding-left: 36px;
 }
+
+.control-mark {
+  position: absolute;
+  min-width: 20px;
+  min-height: 20px;
+  top: 2px;
+  left: 0;
+  background-color: #fff;
+}
+
+.control-checkbox + .control-mark {
+  border-radius: 4px;
+}
+
+.control-checkbox:checked + .control-mark::before,
+.control-checkbox:checked +.control-mark::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 6px;
+  bottom: 4px;
+  left: 4px;
+  right: 4px;
+  background-color: #3f5e72;
+}
+
+.control-checkbox:checked + .control-mark::before {
+  width: 2px;
+  height: 9px;
+  transform: rotate(-50deg);
+}
+
+.control-checkbox:checked +.control-mark::after {
+  left: 10px;
+  width: 2px;
+  height: 10px;
+  transform: rotate(45deg);
+}
+
+.control-radio + .control-mark {
+  border-radius: 50%;
+}
+
+.control-radio:checked + .control-mark::before {
+  content: "";
+  display: block;
+  position: absolute;
+  min-width: 10px;
+  min-height: 10px;
+  top: 5px;
+  left: 5px;
+  background-color: #3f5e72;
+  border-radius: 50%;
+}
+
 
 .price-wrapper {
   position: relative;
@@ -682,19 +748,43 @@ svg {
   font-size: inherit;
   line-height: 24px;
   color: #000;
+  background-color: #f2f2f2;
+  appearance: textfield;
+  min-width: 144px;
+  min-height: 48px;
   padding: 12px 20px;
+  border: none;
+  outline: none;
+  margin-bottom: 36px;
+  cursor: pointer;
 }
+
+.price:hover, .range-toggle:hover, .price:focus-visible, .range-toggle:focus-visible {
+  background-color: #e5e5e5;
+}
+
+.price:focus-visible, .range-toggle:focus-visible {
+  outline: 3px solid #83b3d3;
+}
+
+.price:active, .range-toggle:active {
+  background-color: #d3d3d3;
+}
+
+.price:first-of-type {
+  border-radius: 4px 0 0 4px;
+  margin-right: -2px;
+}
+
+.price:last-of-type {
+  border-radius: 0 4px 4px 0;
+}
+
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
+  appearance: none;
   margin: 0;
-}
-
-input[type="number"] {
-  -moz-appearance: textfield;
-  min-width: 144px;
-  min-height: 48px;
 }
 
 .from,
@@ -715,7 +805,41 @@ input[type="number"] {
   right: 20px;
 }
 
-.control {
+.range-scale {
+  position: relative;
+  height: 4px;
+  min-width: 288px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.range-bar {
+  position: absolute;
+  height: 4px;
+  background-color: #fff;
+  min-width: 226px;
+}
+
+.range-toggle {
+  position: absolute;
+  min-width: 20px;
+  min-height: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  bottom: -8px;
+}
+
+.toggle-max {
+ right: 0;
+}
+
+.flex-buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.button-submit, .button-reset {
   font-family: inherit;
   font-weight: 700;
   font-size: 16px;
@@ -724,11 +848,6 @@ input[type="number"] {
   text-align: center;
   color: #fff;
   border-radius: 4px;
-}
-
-.flex-buttons {
-  display: flex;
-  flex-direction: column;
 }
 
 .button-submit {
@@ -763,15 +882,39 @@ input[type="number"] {
   color: #000;
 }
 
+.select-wrapper {
+  position: relative;
+  margin-left: auto;
+}
+
+.select-wrapper::after {
+  content: "";
+  display: block;
+  position: absolute;
+  min-width: 10px;
+  min-height: 10px;
+  right: 98px;
+  top: 45%;
+  border-right: 2px solid #000;
+  border-bottom: 2px solid #000;
+  transform: translateY(-50%) rotate(45deg);
+}
+
 .select-control {
   background-color: transparent;
   border: 2px solid #e5e5e5;
   border-radius: 4px;
   padding: 14px 20px;
   min-width: 292px;
-  height: 49px;
+  min-height: 49px;
   margin: 0 70px 0 auto;
   outline: none;
+  cursor: pointer;
+  appearance: none;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
 }
 
 .select-control:hover,
@@ -782,13 +925,6 @@ input[type="number"] {
 .select-control:disabled {
   border: 2px solid rgba(0, 0, 0, 0.3);
   color: rgba(0, 0, 0, 0.3);
-}
-
-.select-control option {
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  color: inherit;
 }
 
 .hotels-display {
