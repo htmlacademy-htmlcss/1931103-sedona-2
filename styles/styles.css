@@ -77,6 +77,7 @@ svg {
 
 .header-logo {
   position: absolute;
+  z-index: 1;
 }
 
 .main-header-logo {
@@ -128,6 +129,7 @@ svg {
   bottom: -1px;
   height: 2px;
   background-color: #756257;
+  z-index: 1;
 }
 
 .navigation-link:not(.navigation-link.button):hover {
