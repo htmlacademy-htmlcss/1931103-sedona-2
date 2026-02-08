@@ -77,7 +77,6 @@ svg {
 
 .header-logo {
   position: absolute;
-  z-index: 1;
 }
 
 .main-header-logo {
@@ -129,7 +128,6 @@ svg {
   bottom: -1px;
   height: 2px;
   background-color: #756257;
-  z-index: 1;
 }
 
 .navigation-link:not(.navigation-link.button):hover {
@@ -262,25 +260,12 @@ a:active span {
 }
 
 .preview-background {
-  background-image: url("../images/background-preview.jpg");
+  background-image: url("../images/preview-pattern.svg"), url("../images/background-preview.jpg");
   background-color: #c2d5e3;
-  background-size: cover;
-  background-position: left top;
+  background-size: 100% auto, cover;
+  background-position: left calc(100% + 1px), left top;
   background-repeat: no-repeat;
   padding: 52px 70px 82px;
-  position: relative;
-}
-
-.preview-background::after {
-  content: "";
-  display: block;
-  position: absolute;
-  background-image: url("../images/preview-pattern.svg");
-  background-repeat: no-repeat;
-  left: 0;
-  right: 0;
-  bottom: -1px;
-  min-height: 58px;
 }
 
 .preview-picture {
@@ -634,13 +619,11 @@ a:active span {
   margin: auto;
   padding: 64px 70px;
   border-radius: 30px;
-  position: relative;
 }
 
 .modal-header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
   margin-bottom: 48px;
 }
 
@@ -653,7 +636,6 @@ a:active span {
   text-transform: uppercase;
   color: #000;
   max-width: 450px;
-  flex-grow: 0;
 }
 
 .modal-button-close {
@@ -666,7 +648,6 @@ a:active span {
   background-color: #f2f2f2;
   cursor: pointer;
   position: relative;
-  flex-shrink: 0;
   margin-right: -18px;
 }
 
@@ -680,8 +661,6 @@ a:active span {
   background-color: #000;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-
 }
 
 .modal-button-close::before {
@@ -724,7 +703,6 @@ a:active span {
 .input-arrival,
 .input-departure {
   min-width: 440px;
-
   border-radius: 4px;
   padding: 12px 20px;
   margin-bottom: 4px;
@@ -758,11 +736,6 @@ a:active span {
 .input-departure:focus-visible {
   outline: 3px solid #83b3d3;
 }
-
-
-
-
-
 
 
 .modal-message {
@@ -803,8 +776,6 @@ a:active span {
   cursor: pointer;
   background-color: transparent;
   color: rgba(117, 97, 87, 0.3);
-  display: flex;
-  place-items: center;
   position: relative;
 }
 
