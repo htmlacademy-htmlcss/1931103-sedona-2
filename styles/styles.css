@@ -34,7 +34,11 @@ body {
   color: #333;
 }
 
-img,
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 svg {
   display: block;
 }
@@ -487,7 +491,7 @@ a:active span {
   font-family: inherit;
   font-size: inherit;
   line-height: 24px;
-  color: rgba (0, 0, 0, 0.6);
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .newsletter-field:hover,
