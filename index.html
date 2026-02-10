@@ -51,11 +51,9 @@
                   <span class="visually-hidden">Избранное</span>
                 </a>
               </li>
-              <li class="navigation-item">
-                <a class="navigation-link button button-primary" href="#">Хочу сюда!</a>
-              </li>
             </ul>
           </div>
+          <a class="navigation-link button button-primary" href="#">Хочу сюда!</a>
         </nav>
       </header>
       <main class="main-index main-container">
@@ -178,8 +176,9 @@
           <h2 class="newsletter-title">Подпишитесь на рассылку</h2>
           <p class="newsletter-text">Только полезная информация и никакого спама,<br> честное бойскаутское!</p>
           <form class="newsletter-form" action="https://echo.htmlacademy.ru/" method="post">
-            <label class="visually-hidden">Email</label>
-            <input class="newsletter-field" type="email" placeholder="Ваш e-mail" name="email" required>
+            <label class="visually-hidden" for="email-field">Email</label>
+            <input class="newsletter-field" type="email" placeholder="Ваш e-mail" name="email" id="email-field"
+              required>
             <button class="button newsletter-button button-secondary" type="submit">Подписаться</button>
           </form>
         </section>
@@ -221,10 +220,13 @@
                 </a>
               </li>
             </ul>
-            <a class="footer-phone" href="tel:+78128121212">+7 (812) 812-12-12</a>
-            <a class="htmlacademy-link" href="https://htmlacademy.ru/intensive/htmlcss" target="_blank" rel="noreferrer noopener">
-              <svg focusable="false" role="img" aria-label="Логотип HTML Академии" width="116" height="34" fill="#000"
-                viewBox="0 0 116 34" xmlns="http://www.w3.org/2000/svg">
+            <div class="phone">
+              <a class="footer-phone" href="tel:+78128121212">+7 (812) 812-12-12</a>
+            </div>
+            <a class="htmlacademy-link" href="https://htmlacademy.ru/intensive/htmlcss" target="_blank"
+              rel="noreferrer noopener">
+              <svg focusable="false" role="img" aria-label="Логотип HTML Академии" width="116" height="36" fill="#000"
+                viewBox="0 0 116 36" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0 12.9V15.5H2.5V12.9H0Z" />
                 <path
                   d="M11.6 4.5C10 4.5 8.8 5.2 8 6.2H7.9V0H5.9V15.5H7.9V10.2C7.9 8.1 9.2 6.6 11.2 6.6C13 6.6 14.1 8 14.1 9.8V15.5H16.1V9.4C16.2 6.4 14.3 4.5 11.6 4.5Z" />
