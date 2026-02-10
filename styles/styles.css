@@ -75,10 +75,6 @@ svg {
   margin-right: 30px;
 }
 
-.main-header-logo {
-  pointer-events: none;
-}
-
 .header-logo {
   position: absolute;
 }
@@ -536,7 +532,7 @@ a:active span {
 .social-link {
   display: block;
   outline: none;
-  padding: 0 10px;
+  padding: 20px 10px;
 }
 
 .social-link:hover svg,
@@ -570,8 +566,9 @@ a:active span {
 
 .htmlacademy-link {
   display: block;
-  width: 115px;
+  width: 116px;
   height: 34px;
+  padding: 8px 0;
   color: #000;
   text-decoration: none;
   font-style: normal;
@@ -1010,7 +1007,6 @@ a:active span {
 
 .catalog-filter-group:nth-child(3) {
   margin-left: auto;
-  margin-right: 70px;
   min-width: 288px;
   flex-shrink: 0;
 }
@@ -1197,6 +1193,7 @@ input::-webkit-inner-spin-button {
 .flex-buttons {
   display: flex;
   flex-direction: column;
+  margin-left: auto;
 }
 
 .button-submit,
