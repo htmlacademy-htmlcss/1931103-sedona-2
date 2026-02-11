@@ -248,6 +248,7 @@ a:active span {
 
 .preview {
   text-align: center;
+  margin-bottom: 27px;
 }
 
 .preview-background {
@@ -282,10 +283,6 @@ a:active span {
   line-height: 26px;
 }
 
-.advantages {
-  margin-top: 22px;
-}
-
 .advantages-list {
   margin: 0;
   padding: 0;
@@ -315,14 +312,18 @@ a:active span {
 }
 
 .advantages-title-description {
-  padding: 108px 84px;
+  padding: 107px 84px;
+}
+
+.advantages-title-description-dark {
+  min-width: 400px;
+  min-height: 100%;
 }
 
 .advantages-title-description-dark {
   padding: 97px 86px;
-  min-width: 400px;
-  min-height: 100%;
 }
+
 
 .advantages-title {
   margin: 0 0 25px 0;
@@ -361,14 +362,14 @@ a:active span {
 }
 
 .services-title-text {
-  padding: 60px 348px;
+  padding: 59px 348px;
 }
 
 .services-title {
   font-weight: 700;
   font-size: 30px;
   line-height: 36px;
-  margin: 0 0 20px 0;
+  margin: 0 0 15px 0;
   text-transform: uppercase;
   color: #000;
 }
@@ -390,7 +391,7 @@ a:active span {
 .services-item {
   flex-basis: 400px;
   min-height: 386px;
-  padding: 80px 84px;
+  padding: 83px 84px;
 }
 
 .services-item svg {
@@ -421,7 +422,7 @@ a:active span {
   line-height: 36px;
   text-transform: uppercase;
   color: #000;
-  margin: 0 0 15px 0;
+  margin: -10px 0 15px 0;
 }
 
 .hotel-search-text {
@@ -444,11 +445,11 @@ a:active span {
   background-repeat: no-repeat;
   color: #fff;
   text-align: center;
-  padding: 91px 70px 104px;
+  padding: 96px 70px 104px;
 }
 
 .newsletter-title {
-  margin: 0 0 15px 0;
+  margin: 0 0 20px 0;
   font-weight: 700;
   font-size: 30px;
   line-height: 36px;
@@ -532,7 +533,7 @@ a:active span {
 .social-link {
   display: block;
   outline: none;
-  padding: 20px 10px;
+  padding: 15px 10px;
 }
 
 .social-link:hover svg,
@@ -567,8 +568,8 @@ a:active span {
 .htmlacademy-link {
   display: block;
   width: 116px;
-  height: 34px;
-  padding: 8px 0;
+  height: 36px;
+  padding: 3px 0;
   color: #000;
   text-decoration: none;
   font-style: normal;
@@ -997,16 +998,17 @@ a:active span {
 }
 
 .catalog-filter-group:first-of-type {
-  margin-right: 70px;
+  margin-right: 67px;
   max-width: 150px;
 }
 
 .catalog-filter-group:nth-child(2) {
   max-width: 150px;
+  margin-right: 145px;
 }
 
 .catalog-filter-group:nth-child(3) {
-  margin-left: auto;
+  margin-right: 70px;
   min-width: 288px;
   flex-shrink: 0;
 }
@@ -1367,6 +1369,7 @@ input::-webkit-inner-spin-button {
 
 .hotels-card-title {
   margin: 0;
+  font-size: 24px;
 }
 
 .hotel-price {
@@ -1391,7 +1394,6 @@ input::-webkit-inner-spin-button {
 .hotel-stars {
   display: flex;
   gap: 6px;
-  padding-top: 10px;
 }
 
 .button.hotel-rating {
@@ -1408,7 +1410,7 @@ input::-webkit-inner-spin-button {
   min-height: 1px;
   background-color: #e6e6e6;
   transform: rotate(-180deg);
-  margin: 20px 0 32px 0;
+  margin: 20px 0 30px 0;
 }
 
 .pagination {
