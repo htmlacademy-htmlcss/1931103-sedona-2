@@ -798,6 +798,11 @@ a:active span {
   outline: 3px solid #83b3d3;
 }
 
+.count-controls:has(.count-input:disabled) {
+   background-color: #f2f2f2;
+   pointer-events: none;
+}
+
 .count-button {
   display: block;
   min-width: 40px;
