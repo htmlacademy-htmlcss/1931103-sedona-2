@@ -409,16 +409,25 @@ a:active span {
 .services-item {
   flex-basis: 400px;
   min-height: 385px;
-  padding: 83px 84px 56px;
-}
-
-.services-item svg {
-  margin: 0 auto;
-  display: block;
+  padding: 152px 84px 56px;
+  background-repeat: no-repeat;
+  background-position: center 80px;
 }
 
 .services-item.light {
   background-color: rgba(131, 179, 211, 0.12);
+}
+
+.item-housing {
+  background-image: url("../images/housing.svg");
+}
+
+.item-food {
+  background-image: url("../images/food.svg");
+}
+
+.item-souvenirs {
+  background-image: url("../images/present.svg");
 }
 
 .services-name {
@@ -538,7 +547,7 @@ a:active span {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .footer-social-list {
@@ -582,6 +591,7 @@ a:active span {
   display: block;
   outline: none;
   padding: 5px 0;
+  max-width: 720px;
 }
 
 .footer-phone:hover,
@@ -779,7 +789,7 @@ a:active span {
 }
 
 .guest-group {
-  min-width: 248px;
+  min-width: 246px;
   align-items: center;
 }
 
@@ -799,9 +809,9 @@ a:active span {
 }
 
 .count-controls:has(.count-input:disabled) {
-   background-color: #f2f2f2;
-   pointer-events: none;
-   opacity: 0.8;
+  background-color: #f2f2f2;
+  pointer-events: none;
+  opacity: 0.8;
 }
 
 .count-button {
@@ -888,10 +898,16 @@ a:active span {
   appearance: textfield;
 }
 
+.count-input::-webkit-outer-spin-button,
+.count-input::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
 .label-tooltip-wrapper {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 14px;
   position: relative;
 }
 
@@ -900,7 +916,6 @@ a:active span {
   min-width: 26px;
   min-height: 26px;
   border: none;
-  outline: none;
   border-radius: 50%;
   background-color: #83b3d3;
   color: #ffffff;
@@ -945,7 +960,6 @@ a:active span {
   font-size: 16px;
   line-height: 20px;
   left: -60%;
-  overflow: hidden;
 }
 
 .tooltip-text::before {
@@ -1109,6 +1123,10 @@ a:active span {
 }
 
 .control-mark svg {
+  display: none;
+}
+
+.control-checkbox:checked + .control-mark svg {
   display: block;
 }
 
@@ -1146,6 +1164,12 @@ a:active span {
   opacity: 30%;
 }
 
+.control:has(.control-checkbox:disabled),
+.control:has(.control-radio:disabled) {
+  pointer-events: none;
+  opacity: 20%;
+}
+
 .price-wrapper {
   position: relative;
 }
@@ -1165,6 +1189,12 @@ a:active span {
   outline: none;
   margin-bottom: 44px;
   cursor: pointer;
+}
+
+.price::-webkit-outer-spin-button,
+.price::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
 }
 
 .price:hover,
@@ -1187,12 +1217,6 @@ a:active span {
 
 .price:last-of-type {
   border-radius: 0 4px 4px 0;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  appearance: none;
-  margin: 0;
 }
 
 .price-wrapper .from,
@@ -1305,6 +1329,7 @@ input::-webkit-inner-spin-button {
   line-height: 36px;
   text-transform: uppercase;
   color: #000000;
+  max-width: 350px;
 }
 
 .select-wrapper {
@@ -1363,6 +1388,7 @@ input::-webkit-inner-spin-button {
   justify-content: space-between;
   align-items: center;
   gap: 8px;
+  max-width: 160px;
 }
 
 .display-item-link {
@@ -1411,7 +1437,7 @@ input::-webkit-inner-spin-button {
 .hotels-card {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: min-content 1fr;
+  grid-template-rows: repeat(4, auto);
   gap: 16px 20px;
   border: 1px solid #e6e6e6;
   border-radius: 4px;
@@ -1457,9 +1483,24 @@ input::-webkit-inner-spin-button {
   line-height: 20px;
 }
 
-.hotel-stars {
-  display: flex;
-  gap: 6px;
+.stars {
+  background-image: url("../images/star.svg");
+  background-repeat: space no-repeat;
+  background-size: 18px 17px;
+  margin-top: 8px;
+}
+
+.stars-one,
+.stars-two {
+  width: 86px;
+}
+
+.stars-three {
+  width: 66px;
+}
+
+.stars-four {
+  width: 42px;
 }
 
 .button.hotel-rating {
